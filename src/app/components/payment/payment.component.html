@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-6">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Product Title</th>
+                    <th>Product Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let item of checkout">
+                    <td>{{item.title}}</td>
+                    <td>{{item.price}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <strong>Total Amount: {{TotalAmount |  currency:"₹"}}</strong>
+        </p>
+    </div>
+    <div class="col-6">
+        <ng-container *ngIf="checkout.length !=0">
+            <form #ngPayment class="w-75">
+                <dl>
+                    <dt>Card Number</dt>
+                    <dd><input type="text" placeholder="xxxxxxxxxxxxxxxx" class="form-control"></dd>
+                    <dt>Expiry Year</dt>
+                    <dd><input type="text" placeholder="YY/YY" class="form-control"></dd>
+                    <dt>CVV</dt>
+                    <dd><input type="text" placeholder="CVV" class="form-control"></dd>
+                    <dt></dt>
+                </dl>
+            </form>
+            <div>
+                <dl>
+                    <dt></dt>
+                    <dd>Payment Through <a href="">UPI</a></dd>
+                </dl>
+                <div>
+                    <button (click)="proceedToPay()" routerLink="/paymentsuccess" class="btn btn-primary">Proceed To Pay</button>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<app-footer></app-footer>

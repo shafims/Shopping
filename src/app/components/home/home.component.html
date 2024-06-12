@@ -1,0 +1,18 @@
+<app-slide></app-slide>
+<div class="row mt-5">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3" *ngFor="let item of products">
+        <div class="card pt-3 w-100 shadow p-3 mb-5 bg-white rounded" style="height: 280px;">
+            <a routerLink="/products/{{item.category}}">
+                <img [src]="item.image" width="150" height="150" class="card-img-top" alt="">
+                <div class="card-header bg-white text-center" style="height: 100px;">
+                    <p class="text-dark"> <span>{{item.title | ellipsis:15}}</span> <br>
+                        <span>{{item.price | currency:"INR"}}</span>
+
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+

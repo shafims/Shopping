@@ -1,0 +1,17 @@
+.card-img, .card-img-top, .card-img-bottom {
+    width: 50%;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
+.card {
+    transition: transform .2s;
+}
+.card:hover {
+    transform: scale(1.1);
+}
+.card-header{
+    border-bottom: none;
+}
+a{
+    text-decoration: none !important;
+}

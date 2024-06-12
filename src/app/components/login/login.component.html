@@ -1,0 +1,19 @@
+<div class="mt-5">
+    <div class="text-center">
+        <h2>Login</h2>
+    </div>
+    <form #nglogin="ngForm" id="form" (ngSubmit)="LoginClick(nglogin.value)" class="border p-4 rounded mx-auto shadow p-3 mb-5 bg-white">
+        
+        <dl>
+            <dt>Email</dt>
+            <dd><input type="Email" name="Email" ngModel #Email="ngModel" class="form-control"  placeholder="Enter Email"></dd>
+            <dt>Password</dt>
+            <dd><input type="password" name="Password" ngModel #Password="ngModel" class="form-control" placeholder="Enter Password"></dd>
+        </dl>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+
+<div class="text-center">
+    <a routerLink="/register">Create Account</a>
+</div>

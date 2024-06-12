@@ -1,0 +1,16 @@
+<div class="row mt-5">
+    <div class="col-xl-3 col-md-4 col-sm-6 gy-4" *ngFor="let item of products">
+        <a routerLink="/product/{{item.id}}">
+            <div class="card p-3 shadow p-3 mb-5 bg-white rounded" style="height: 500px;">
+                <img [src]="item.image" width="300" height="300" class="mx-auto card-img-top" alt="">
+                <div class="card-header bg-white border-bottom-0" style="height: 200px;">
+                    <p>{{item.title}}</p>
+                    <p><span class="bg-success border rounded"><span class="p-2 bi bi-star-fill text-white">{{item.rating.rate}}</span></span>
+                    <span>{{item.price | currency:"INR"}}</span>
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>  
+</div>
+<app-footer></app-footer>

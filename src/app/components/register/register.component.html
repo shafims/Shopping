@@ -1,0 +1,30 @@
+<div class="mt-4">
+    <div class="text-center">
+        <h2>Register</h2>
+    </div>
+    <form #frmRegister="ngForm" id="form" method="post" (ngSubmit)="RegisterClick(frmRegister.value)" class=" mx-auto border rounded p-4 shadow p-3 mb-5 bg-white rounded">
+        <dl>
+            <dt>Name</dt>
+            <dd><input type="text" (keyup)="VerifyUser($event)" name="Name" ngModel #Name="ngModel" placeholder="Enter Your Name" class="form-control"></dd>
+            <dd>{{name_error}}</dd>
+            <dt>Mobile Number</dt>
+            <dd><input type="text" name="Mobile" ngModel #Mobile="ngModel" placeholder="Enter Your Mobile Number" class="form-control"></dd>
+            <dt>Delivery Address</dt>
+            <dd><input type="text" name="Address" ngModel #Address="ngModel" placeholder="Enter your Address" class="form-control"></dd>
+            <dt>PinCode</dt>
+            <dd><input type="text" name="PinCode" ngModel #PinCode="ngModel" placeholder="Enter Your PinCode" class="form-control"></dd>
+            <dt>Email</dt>
+            <dd><input type="email" (keyup)="VerifyEmail($event)" name="Email" ngModel #Email="ngModel" placeholder="Enter Your Email" class="form-control"></dd>
+            <dd>{{email_error}}</dd>
+            <dt>Password</dt>
+            <dd><input type="password" name="Password" ngModel #Password="ngModel" placeholder="password" name="" id="" class="form-control"></dd>
+            <dt>ConfirmPassword</dt>
+            <dd><input type="password" name="ConfirmPassword" ngModel #ConfirmPassword="ngModel" placeholder="ConfirmPassword" class="form-control"></dd>
+            
+        </dl>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+    <div class="text-center">
+        <a routerLink="/login">Login</a>
+    </div>
+</div>
